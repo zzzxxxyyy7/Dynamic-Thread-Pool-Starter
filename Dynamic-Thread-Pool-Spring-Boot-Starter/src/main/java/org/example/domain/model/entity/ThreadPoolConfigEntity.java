@@ -1,12 +1,13 @@
 package org.example.domain.model.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 /**
  * 线程池配置信息实体对象
  */
-@Data
+@Getter
 public class ThreadPoolConfigEntity {
 
     /**
@@ -22,40 +23,50 @@ public class ThreadPoolConfigEntity {
     /**
      * 核心线程数
      */
+    @Setter
     private int corePoolSize;
 
     /**
      * 最大线程数
      */
+    @Setter
     private int maximumPoolSize;
 
     /**
      * 当前活跃线程数
      */
+    @Setter
     private int activeCount;
 
     /**
      * 当前池中线程数
      */
+    @Setter
     private int poolSize;
 
     /**
      * 队列类型
      */
+    @Setter
     private String queueType;
 
     /**
      * 当前队列任务数
      */
+    @Setter
     private int queueSize;
 
     /**
      * 队列剩余任务数
      */
+    @Setter
     private int remainingCapacity;
 
-    public ThreadPoolConfigEntity(String applicationName, String threadPoolName) {
-        this.appName = applicationName;
+    public ThreadPoolConfigEntity() {
+    }
+
+    public ThreadPoolConfigEntity(String appName, String threadPoolName) {
+        this.appName = appName;
         this.threadPoolName = threadPoolName;
     }
 
