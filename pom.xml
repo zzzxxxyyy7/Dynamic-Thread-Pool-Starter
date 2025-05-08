@@ -13,6 +13,7 @@
         <module>Dynamic-Thread-Pool-Spring-Boot-Starter</module>
         <module>Dynamic-Thread-Pool-Test</module>
         <module>Dynamic-Thread-Pool-Admin</module>
+        <module>Dynamic-Thread-Pool-Common</module>
     </modules>
 
     <properties>

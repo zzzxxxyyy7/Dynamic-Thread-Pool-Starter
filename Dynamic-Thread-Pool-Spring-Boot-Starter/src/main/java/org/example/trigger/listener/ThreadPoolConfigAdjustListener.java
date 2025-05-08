@@ -29,7 +29,7 @@ public class ThreadPoolConfigAdjustListener implements MessageListener<ThreadPoo
 
     @Override
     public void onMessage(CharSequence charSequence, ThreadPoolConfigEntity threadPoolConfigEntity) {
-        logger.info("动态线程池，调整线程池配置。线程池名称:{} 核心线程数:{} 最大线程数:{}", threadPoolConfigEntity.getThreadPoolName(), threadPoolConfigEntity.getPoolSize(), threadPoolConfigEntity.getMaximumPoolSize());
+        logger.info("动态线程池，调整线程池配置。线程池名称:{} 核心线程数:{} 最大线程数:{}", threadPoolConfigEntity.getThreadPoolName(), threadPoolConfigEntity.getCorePoolSize(), threadPoolConfigEntity.getMaximumPoolSize());
         dynamicThreadPoolService.updateThreadPoolConfig(threadPoolConfigEntity);
 
         // 更新后上报最新数据

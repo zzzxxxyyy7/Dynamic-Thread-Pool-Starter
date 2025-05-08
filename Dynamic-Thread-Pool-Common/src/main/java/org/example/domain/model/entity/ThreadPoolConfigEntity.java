@@ -3,6 +3,8 @@ package org.example.domain.model.entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
+
 
 /**
  * 线程池配置信息实体对象
@@ -68,6 +70,19 @@ public class ThreadPoolConfigEntity {
     public ThreadPoolConfigEntity(String appName, String threadPoolName) {
         this.appName = appName;
         this.threadPoolName = threadPoolName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        ThreadPoolConfigEntity that = (ThreadPoolConfigEntity) obj;
+        return Objects.equals(threadPoolName, that.threadPoolName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(threadPoolName);
     }
 
 }
